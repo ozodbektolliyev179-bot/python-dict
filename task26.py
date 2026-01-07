@@ -1,12 +1,17 @@
 def merge_dicts(a: dict, b: dict) -> dict:
-    result = a.copy()   
+    a.update(b)
 
-    for key in b:
-        result[key] = b[key]  
+    return a
 
-    return result
-a = {"x": 1, "y": 2}
-b = {"y": 5, "z": 3}
 
-print(merge_dicts(a, b))
+d1 = {
+    'name': 'ali',
+    'age': 23
+}
+d2 = {
+    'email':'ali@gmail.com',
+    'gender': 'male'
+}
 
+user = merge_dicts(d1, d2)
+print(user)
